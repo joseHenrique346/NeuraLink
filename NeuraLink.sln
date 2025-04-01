@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35919.96 d17.13
+VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuraLink", "NeuraLink\NeuraLink.csproj", "{047DCC6B-DA77-45E3-A43B-87B53C0ABF17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B91C8DE4-530C-4604-BA5B-EB1B5FC8AB7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arguments", "Arguments\Arguments.csproj", "{69578BC0-1BBB-4B08-891C-9CA05B05454B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{311A0F39-B9DA-47D5-8254-92186B1C9135}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{047DCC6B-DA77-45E3-A43B-87B53C0ABF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{047DCC6B-DA77-45E3-A43B-87B53C0ABF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{047DCC6B-DA77-45E3-A43B-87B53C0ABF17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B91C8DE4-530C-4604-BA5B-EB1B5FC8AB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B91C8DE4-530C-4604-BA5B-EB1B5FC8AB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B91C8DE4-530C-4604-BA5B-EB1B5FC8AB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B91C8DE4-530C-4604-BA5B-EB1B5FC8AB7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69578BC0-1BBB-4B08-891C-9CA05B05454B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69578BC0-1BBB-4B08-891C-9CA05B05454B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69578BC0-1BBB-4B08-891C-9CA05B05454B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69578BC0-1BBB-4B08-891C-9CA05B05454B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{311A0F39-B9DA-47D5-8254-92186B1C9135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{311A0F39-B9DA-47D5-8254-92186B1C9135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{311A0F39-B9DA-47D5-8254-92186B1C9135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{311A0F39-B9DA-47D5-8254-92186B1C9135}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
