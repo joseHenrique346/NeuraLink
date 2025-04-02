@@ -10,7 +10,7 @@ namespace Infrastructure.Persistence.EFCore.Entity.Registration.IACommunication
         #region Properties
         [Required]
         public string Question { get; }
-        public CypherNode? NodeConsultation { get; set; }
+        public FineNode? NodeConsultation { get; set; }
         [Required]
         public long UserId { get; set; }
 
@@ -22,7 +22,7 @@ namespace Infrastructure.Persistence.EFCore.Entity.Registration.IACommunication
         #region Constructors
         public AskedQuestion() { }
 
-        public AskedQuestion(string question, CypherNode? nodeConsultation)
+        public AskedQuestion(string question, FineNode? nodeConsultation)
         {
             Question = question;
             NodeConsultation = nodeConsultation;

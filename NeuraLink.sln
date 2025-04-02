@@ -4,12 +4,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.13.35919.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeuraLink", "NeuraLink\NeuraLink.csproj", "{047DCC6B-DA77-45E3-A43B-87B53C0ABF17}"
+	ProjectSection(ProjectDependencies) = postProject
+		{311A0F39-B9DA-47D5-8254-92186B1C9135} = {311A0F39-B9DA-47D5-8254-92186B1C9135}
+		{69578BC0-1BBB-4B08-891C-9CA05B05454B} = {69578BC0-1BBB-4B08-891C-9CA05B05454B}
+		{B91C8DE4-530C-4604-BA5B-EB1B5FC8AB7D} = {B91C8DE4-530C-4604-BA5B-EB1B5FC8AB7D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B91C8DE4-530C-4604-BA5B-EB1B5FC8AB7D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{311A0F39-B9DA-47D5-8254-92186B1C9135} = {311A0F39-B9DA-47D5-8254-92186B1C9135}
+		{69578BC0-1BBB-4B08-891C-9CA05B05454B} = {69578BC0-1BBB-4B08-891C-9CA05B05454B}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arguments", "Arguments\Arguments.csproj", "{69578BC0-1BBB-4B08-891C-9CA05B05454B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{311A0F39-B9DA-47D5-8254-92186B1C9135}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69578BC0-1BBB-4B08-891C-9CA05B05454B} = {69578BC0-1BBB-4B08-891C-9CA05B05454B}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
