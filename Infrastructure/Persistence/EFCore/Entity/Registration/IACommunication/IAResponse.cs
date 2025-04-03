@@ -20,7 +20,7 @@ namespace Infrastructure.Persistence.EFCore.Entity.Registration.IACommunication
         #region Constructors
         public IAResponse() { }
 
-        public IAResponse(string response, long userId, User.User user)
+        public IAResponse(string response, long userId, User user)
         {
             Response = response;
             UserId = userId;
