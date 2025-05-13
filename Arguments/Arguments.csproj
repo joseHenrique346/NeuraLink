@@ -10,4 +10,8 @@
     <Folder Include="Arguments\Base\Response\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Refit" Version="8.0.0" />
+  </ItemGroup>
+
 </Project>
