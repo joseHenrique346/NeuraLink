@@ -1,7 +1,6 @@
-﻿namespace Arguments.Arguments.Registration.Consumer
+﻿namespace Arguments.Arguments.Registration.Consumer;
+
+public  class InputIdentityDeleteUser
 {
-    public  class InputIdentityDeleteUser
-    {
-        public long Id { get; set; } 
-    }
+    public long Id { get; set; } 
 }

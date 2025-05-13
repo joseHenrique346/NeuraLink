@@ -1,6 +1,5 @@
-﻿namespace Arguments.Arguments.Registration.IACommunication.AskedQuestion
+﻿namespace Arguments.Arguments.Registration.IACommunication.AskedQuestion;
+
+public class OutputAskedQuestion
 {
-    public class OutputAskedQuestion
-    {
-    }
 }

@@ -1,4 +1,5 @@
-﻿using Infrastructure.Persistence.EFCore.Entity.Base;
+﻿using Arguments.Arguments.Attributes;
+using Infrastructure.Persistence.EFCore.Entity.Base;
 using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Persistence.EFCore.Entity.Registration.Consumer
@@ -7,12 +8,16 @@ namespace Infrastructure.Persistence.EFCore.Entity.Registration.Consumer
     {
         #region Properties
         [Required]
+        [StringLength(60, MinimumLength = 2)]
         public string UserName { get; private set; }
         [Required]
+        [StringLength(16, MinimumLength = 8)]
         public string Password { get; private set; }
         [Required]
+        [EmailAddress(ErrorMessage = "O e-mail informado não é válido.")]
         public string Email { get; private set; }
         [Required]
+        [ExactLength(11)]
         public string Phone { get; private set; }
         public bool IsAdmin { get; private set; }
         #endregion

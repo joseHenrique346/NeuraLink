@@ -1,10 +1,9 @@
-﻿namespace Arguments.Arguments.Enum
+﻿namespace Arguments.Arguments.Enum;
+
+public enum EnumSeverityType
 {
-    public enum EnumSeverityType
-    {
-        Leve = 1,
-        Média = 2,
-        Grave = 3,
-        Gravíssima = 4
-    }
+    Leve = 1,
+    Média = 2,
+    Grave = 3,
+    Gravíssima = 4
 }

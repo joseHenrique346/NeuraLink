@@ -1,6 +1,5 @@
-﻿namespace Arguments.Arguments.Registration.Consumer
+﻿namespace Arguments.Arguments.Registration.Consumer;
+
+public class OutputUser
 {
-    public class OutputUser
-    {
-    }
 }

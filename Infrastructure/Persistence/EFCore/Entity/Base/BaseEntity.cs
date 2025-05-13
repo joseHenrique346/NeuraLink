@@ -1,7 +1,6 @@
-﻿namespace Infrastructure.Persistence.EFCore.Entity.Base
+﻿namespace Infrastructure.Persistence.EFCore.Entity.Base;
+
+public class BaseEntity
 {
-    public class BaseEntity
-    {
-        public long Id { get; set; }
-    }
+    public long Id { get; set; }
 }

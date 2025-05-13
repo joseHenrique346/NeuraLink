@@ -1,6 +1,5 @@
-﻿namespace Arguments.Arguments.Registration.Consumer
+﻿namespace Arguments.Arguments.Registration.Consumer;
+
+public class InputIdentityViewUser
 {
-    public class InputIdentityViewUser
-    {
-    }
 }

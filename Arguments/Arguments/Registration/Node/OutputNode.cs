@@ -1,6 +1,5 @@
-﻿namespace Arguments.Arguments.Registration.Node
+﻿namespace Arguments.Arguments.Registration.Node;
+
+public class OutputNode
 {
-    public class OutputNode
-    {
-    }
 }

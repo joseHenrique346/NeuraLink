@@ -1,6 +1,5 @@
-﻿namespace Arguments.Arguments.Registration.IACommunication.IAResponse
+﻿namespace Arguments.Arguments.Registration.IACommunication.IAResponse;
+
+public class OutputIAResponse
 {
-    public class OutputIAResponse
-    {
-    }
 }

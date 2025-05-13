@@ -1,6 +1,5 @@
-﻿namespace Arguments.Arguments.Registration.Node
+﻿namespace Arguments.Arguments.Registration.Node;
+
+public class InputIdentityUpdateNode
 {
-    public class InputIdentityUpdateNode
-    {
-    }
 }
