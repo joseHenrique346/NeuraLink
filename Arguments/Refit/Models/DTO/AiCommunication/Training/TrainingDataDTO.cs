@@ -11,17 +11,17 @@ public class TrainingDataDTO : BaseDTO
     [Required]
     public string Question { get; }
     [Required]
-    public FineNodeDTO NodeConsultation { get; set; }
+    public string NodeConsultation { get; set; }
     [Required]
     public long UserId { get; set; }
 
-    #region Mapping
-    public UserDTO User { get; set; }
-    #endregion
+    //#region Mapping
+    //public UserDTO User { get; set; }
+    //#endregion
     #endregion
 
     #region Constructors
-    public TrainingDataDTO(string question, FineNodeDTO nodeConsultation, long userId)
+    public TrainingDataDTO(string question, string nodeConsultation, long userId)
     {
         Question = question;
         NodeConsultation = nodeConsultation;

@@ -12,9 +12,9 @@ public class AskedQuestionDTO : BaseDTO
     [Required]
     public long UserId { get; set; }
 
-    #region Mapping
-    public UserDTO User { get; set; }
-    #endregion
+    //#region Mapping
+    //public UserDTO User { get; set; }
+    //#endregion
 
     #region Constructors
     public AskedQuestionDTO(string question, long userId)

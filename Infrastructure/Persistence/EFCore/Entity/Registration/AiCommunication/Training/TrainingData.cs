@@ -11,7 +11,7 @@ public class TrainingData : BaseEntity
     [Required]
     public string Question { get; }
     [Required]
-    public FineNode NodeConsultation { get; set; }
+    public string NodeConsultation { get; set; }
     [Required]
     public long UserId { get; set; }
 
@@ -21,7 +21,7 @@ public class TrainingData : BaseEntity
     #endregion
 
     #region Constructors
-    public TrainingData(string question, FineNode nodeConsultation, long userId)
+    public TrainingData(string question, string nodeConsultation, long userId)
     {
         Question = question;
         NodeConsultation = nodeConsultation;

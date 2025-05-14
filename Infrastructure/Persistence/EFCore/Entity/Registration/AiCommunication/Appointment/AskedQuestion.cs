@@ -1,4 +1,5 @@
-﻿using Infrastructure.Persistence.EFCore.Entity.Base;
+﻿using Arguments.Refit.Models.DTO.AiCommunication.Appointment;
+using Infrastructure.Persistence.EFCore.Entity.Base;
 using Infrastructure.Persistence.EFCore.Entity.Registration.Consumer;
 using System.ComponentModel.DataAnnotations;
 
@@ -15,6 +16,20 @@ public class AskedQuestion : BaseEntity
     #region Mapping
     public User User { get; set; }
     #endregion
+
+    //public static implicit operator AskedQuestionDTO(AskedQuestion entity)
+    //{
+    //    return new AskedQuestionDTO
+    //    {
+    //        Question = entity.Question,
+    //        UserId = entity.UserId
+    //    };
+    //}
+
+    public static implicit operator AskedQuestion(AskedQuestionDTO dto)
+    {
+        return new AskedQuestion(dto.Question, dto.UserId);
+    }
 
     #region Constructors
     public AskedQuestion(string question, long userId)
