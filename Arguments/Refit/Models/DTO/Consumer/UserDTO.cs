@@ -1,15 +1,15 @@
 ﻿using Arguments.Arguments.Attributes;
-using Infrastructure.Persistence.EFCore.Entity.Base;
+using Arguments.Refit.Models.Base;
 using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Persistence.EFCore.Entity.Registration.Consumer
 {
-    public class User : BaseEntity
+    public class UserDTO : BaseDTO
     {
         #region Properties
         [Required]
         [StringLength(60, MinimumLength = 2)]
-        public string Name { get; private set; }
+        public string UserName { get; private set; }
         [Required]
         [StringLength(16, MinimumLength = 8)]
         public string Password { get; private set; }
@@ -23,11 +23,11 @@ namespace Infrastructure.Persistence.EFCore.Entity.Registration.Consumer
         #endregion
 
         #region Constructors
-        public User() { }
+        public UserDTO() { }
 
-        public User(string name, string password, string email, string phone, bool isAdmin = false)
+        public UserDTO(string userName, string password, string email, string phone, bool isAdmin = false)
         {
-            Name = name;
+            UserName = userName;
             Password = password;
             Email = email;
             Phone = phone;

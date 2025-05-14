@@ -1,5 +1,5 @@
-﻿using Infrastructure.Persistence.EFCore.Entity.Registration.AiCommunication.Appointment;
-using Infrastructure.Persistence.EFCore.Entity.Registration.AiCommunication.Training;
+﻿using Arguments.Refit.Models.DTO.AiCommunication.Appointment;
+using Arguments.Refit.Models.DTO.AiCommunication.Training;
 using Refit;
 
 namespace Arguments.Refit.AI
@@ -7,9 +7,9 @@ namespace Arguments.Refit.AI
     public interface INeuraRoadAPI
     {
         [Post("/treinar/")]
-        Task<ApiResponse<TrainingResponse>> TrainAsync([Body] TrainingData data);
+        Task<ApiResponse<TrainingResponseDTO>> TrainAsync([Body] TrainingDataDTO data);
 
         [Post("/consultar_multa/")]
-        Task<ApiResponse<AppointmentResponse>> AskQuestionAsync([Body] AskedQuestion question);
+        Task<ApiResponse<AppointmentResponseDTO>> AskQuestionAsync([Body] AskedQuestionDTO question);
     }
 }

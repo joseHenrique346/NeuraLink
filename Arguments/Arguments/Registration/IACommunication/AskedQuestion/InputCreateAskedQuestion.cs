@@ -1,5 +1,12 @@
-﻿namespace Arguments.Arguments.Registration.IACommunication.AskedQuestion;
+﻿using Arguments.Arguments.Base.Crud;
+using System.ComponentModel.DataAnnotations;
 
-public class InputCreateAskedQuestion
+namespace Arguments.Arguments.Registration.IACommunication.AskedQuestion;
+
+public class InputCreateAskedQuestion(string question, long userId) : BaseInputCreate<InputCreateAskedQuestion>
 {
+    [Required]
+    public string Question { get; set; } = question;
+    [Required]
+    public long UserId { get; set; } = userId;
 }

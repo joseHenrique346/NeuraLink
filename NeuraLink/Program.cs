@@ -1,6 +1,5 @@
-using Arguments;
+using Arguments.Refit.AI;
 using NeuraLink.Extension;
-using NeuraLink.StandardAdmin;
 using Refit;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var api = RestService.For<ITesteRefit>("http://127.0.0.1:8000");
+var api = RestService.For<INeuraRoadAPI>("http://127.0.0.1:8000");
 
 // Treinar
 //var treinoData = new TrainData { Pergunta = "Exemplo?", Query = "MATCH (m) RETURN m" };
