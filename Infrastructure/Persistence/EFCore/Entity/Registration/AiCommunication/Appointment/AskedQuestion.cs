@@ -10,12 +10,6 @@ public class AskedQuestion : BaseEntity
     #region Properties
     [Required]
     public string Question { get; set; }
-    [Required]
-    public long UserId { get; set; }
-
-    #region Mapping
-    public User User { get; set; }
-    #endregion
 
     //public static implicit operator AskedQuestionDTO(AskedQuestion entity)
     //{
@@ -28,14 +22,13 @@ public class AskedQuestion : BaseEntity
 
     public static implicit operator AskedQuestion(AskedQuestionDTO dto)
     {
-        return new AskedQuestion(dto.Question, dto.UserId);
+        return new AskedQuestion(dto.Question);
     }
 
     #region Constructors
-    public AskedQuestion(string question, long userId)
+    public AskedQuestion(string question)
     {
         Question = question;
-        UserId = userId;
     }
     #endregion
     #endregion

@@ -2,6 +2,7 @@
 using Infrastructure.Persistence.EFCore.Entity.Registration.Consumer;
 using System.ComponentModel.DataAnnotations;
 using Arguments.Refit.Models.Base;
+using System.Text.Json.Serialization;
 
 namespace Arguments.Refit.Models.DTO.AiCommunication.Training;
 
@@ -9,23 +10,18 @@ public class TrainingDataDTO : BaseDTO
 {
     #region Properties
     [Required]
+    [JsonPropertyName("pergunta")]
     public string Question { get; }
     [Required]
+    [JsonPropertyName("query")]
     public string NodeConsultation { get; set; }
-    [Required]
-    public long UserId { get; set; }
-
-    //#region Mapping
-    //public UserDTO User { get; set; }
-    //#endregion
     #endregion
 
     #region Constructors
-    public TrainingDataDTO(string question, string nodeConsultation, long userId)
+    public TrainingDataDTO(string question, string nodeConsultation)
     {
         Question = question;
         NodeConsultation = nodeConsultation;
-        UserId = userId;
     }
     #endregion
 }

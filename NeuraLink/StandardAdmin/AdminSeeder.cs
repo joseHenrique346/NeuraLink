@@ -13,7 +13,7 @@ namespace NeuraLink.StandardAdmin
                 UserName = "admin",
                 Password = BCrypt.Net.BCrypt.HashPassword("admin"),
                 Email = "admin2025@gmail.com",
-                Phone = "14987654321",
+                Phone = "14981381519",
                 IsAdmin = true
             };
         }

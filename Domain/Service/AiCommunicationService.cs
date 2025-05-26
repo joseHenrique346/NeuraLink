@@ -16,6 +16,9 @@ namespace Application.Services.Implementations
             _api = api;
         }
 
+        /// <summary>
+        /// Valida propriedades nulas de DTOs com atributos [Required]
+        /// </summary>
         public BaseResponse<TResponse> ValidateNullInputsProperties<TResponse, TInputCreate>(TInputCreate inputCreate)
         {
             BaseResponse<TResponse> response = new();
@@ -43,6 +46,9 @@ namespace Application.Services.Implementations
             return response;
         }
 
+        /// <summary>
+        /// Faz a chamada de verificação ou treinamento com a IA, dependendo do tipo do input.
+        /// </summary>
         public async Task<BaseResponse<TResponse>> CheckTrafficFinesAsync<TResponse, TInputCreate>(BaseResponse<TResponse> response, TInputCreate question)
         {
             if (!response.isSuccess)
@@ -56,7 +62,8 @@ namespace Application.Services.Implementations
                 {
                     var apiResponse = await _api.AskQuestionAsync(asked);
 
-                    if (apiResponse.IsSuccessStatusCode)
+                    // Aqui, confere diretamente o conteúdo, não só o StatusCode
+                    if (apiResponse.Content != null)
                     {
                         result.Content = (TResponse)(object)apiResponse.Content.Response;
                         result.isSuccess = true;
@@ -64,22 +71,32 @@ namespace Application.Services.Implementations
                     else
                     {
                         result.isSuccess = false;
-                        result.MessageErrors.Add($"Erro: {apiResponse.StatusCode}");
+                        result.MessageErrors.Add($"Erro interno. StatusCode: {apiResponse.StatusCode}");
                     }
                 }
                 else if (question is TrainingDataDTO training)
                 {
                     var apiResponse = await _api.TrainAsync(training);
 
-                    if (apiResponse.IsSuccessStatusCode)
+                    // Ajusta aqui para ler a mensagem de sucesso ou erro
+                    if (apiResponse.Content != null)
                     {
-                        result.Content = (TResponse)(object)apiResponse.Content.SuccessMessage;
-                        result.isSuccess = true;
+                        // Se tiver uma mensagem de sucesso no DTO
+                        if (!string.IsNullOrEmpty(apiResponse.Content.SuccessMessage))
+                        {
+                            result.Content = (TResponse)(object)apiResponse.Content;
+                            result.isSuccess = true;
+                        }
+                        else
+                        {
+                            result.isSuccess = false;
+                            result.MessageErrors.Add("Erro no treinamento: mensagem de sucesso ausente.");
+                        }
                     }
                     else
                     {
                         result.isSuccess = false;
-                        result.MessageErrors.Add($"Erro: {apiResponse.StatusCode}");
+                        result.MessageErrors.Add($"Erro interno. StatusCode: {apiResponse.StatusCode}");
                     }
                 }
                 else
@@ -96,5 +113,6 @@ namespace Application.Services.Implementations
 
             return result;
         }
+
     }
 }

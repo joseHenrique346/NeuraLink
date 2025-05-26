@@ -8,7 +8,7 @@ namespace Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class AiCommunicationController : ControllerBase
     {
         private readonly IAiCommunicationService _service;
@@ -32,11 +32,12 @@ namespace Api.Controllers
         [HttpPost("treinar")]
         public async Task<IActionResult> Train([FromBody] TrainingDataDTO data)
         {
-            var validation = _service.ValidateNullInputsProperties<string, TrainingDataDTO>(data);
+            // Aqui, o tipo de resposta agora é o DTO correto!
+            var validation = _service.ValidateNullInputsProperties<TrainingResponseDTO, TrainingDataDTO>(data);
             if (!validation.isSuccess)
                 return BadRequest(validation);
 
-            var response = await _service.CheckTrafficFinesAsync<string, TrainingDataDTO>(validation, data);
+            var response = await _service.CheckTrafficFinesAsync<TrainingResponseDTO, TrainingDataDTO>(validation, data);
             return response.isSuccess ? Ok(response) : BadRequest(response);
         }
     }
