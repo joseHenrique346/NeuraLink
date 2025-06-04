@@ -32,13 +32,18 @@ namespace Api.Controllers
         [HttpPost("treinar")]
         public async Task<IActionResult> Train([FromBody] TrainingDataDTO data)
         {
-            // Aqui, o tipo de resposta agora é o DTO correto!
             var validation = _service.ValidateNullInputsProperties<TrainingResponseDTO, TrainingDataDTO>(data);
             if (!validation.isSuccess)
                 return BadRequest(validation);
 
             var response = await _service.CheckTrafficFinesAsync<TrainingResponseDTO, TrainingDataDTO>(validation, data);
             return response.isSuccess ? Ok(response) : BadRequest(response);
+        }
+
+        [HttpGet("Nirvana")]
+        public string Nirvana()
+        {
+            return "Nirvana";
         }
     }
 }
